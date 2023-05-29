@@ -1,0 +1,54 @@
+/*
+GENERAL SETTING
+*/
+*{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(16, 16, 76)
+}
+
+/*
+HEADER SETTING
+*/
+header{ 
+    background-color: rgb(163,163,163);
+    height: 120px;   
+}
+
+main {
+    margin: 3rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+FOOTER SETTING
+*/
+footer{
+    background-color: rgb(163,163,163);
+    height: 80px;   
+}
+
+/*
+GRID END CELL SETTING
+*/
+
+#grid{
+    display: flex;
+    width:  900px;
+    height: 900px;
+    flex-wrap: wrap;
+}
+
+.cell{
+    width: calc(900px / 10);
+    height: calc(900px / 10);
+    background-color: aquamarine;
+    border: 2px solid white;
+}
