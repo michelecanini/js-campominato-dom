@@ -54,6 +54,11 @@ GRID END CELL SETTING
     height: calc(900px / 10);
     background-color: aquamarine;
     border: 2px solid white;
+    text-align: center;
+    font-size: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .clicked_cell{
