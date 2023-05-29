@@ -7,6 +7,14 @@ function createCell() {
     return cell;
 }
 
+// COSTANTE DELL'ARRAY ESPLOSIVI TNT VUOTO
+const array_explosive_tnt = [];
+
+// FUNZIONE DI RIEMPIMENTO DELL'ARREY ESPLOSIVO TNT
+function fillExplosiveTnt(array_explosive_tnt) {
+    console.log(array_explosive_tnt);
+}
+
 // FUNZIONE PER LA CREAZIONE DEL NUMERO CASUALE
 function generateRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -23,6 +31,9 @@ btn.addEventListener('click', function(){
 
     // RESET DELLE CELLE
     grid.innerHTML = '';
+
+    // CHIAMATA DELLA FUNZIONE PER RIEMPIRE L'ARRAY DEGLI ESPLOSIVI TNT
+    fillExplosiveTnt(array_explosive_tnt);
 
     // COSTANTE DEL NUMERO MASSIMO DI CELLE
     const cellMax = 100;
