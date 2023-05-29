@@ -15,7 +15,7 @@ body{
 HEADER SETTING
 */
 header{ 
-    background-color: rgb(163,163,163);
+    background-color: white;
     height: 120px;   
 }
 
@@ -31,7 +31,7 @@ main {
 FOOTER SETTING
 */
 footer{
-    background-color: rgb(163,163,163);
+    background-color: white;
     height: 80px;   
 }
 
@@ -55,4 +55,11 @@ GRID END CELL SETTING
 
 .clicked_cell{
     background-color: rgb(0, 115, 255);
+}
+
+button{
+    padding: 5px 10px;
+    background-color: rgb(255, 170, 0);
+    border: 1px solid rgb(255, 170, 0);
+    border-radius: 5px;
 }
