@@ -35,6 +35,7 @@ FOOTER SETTING
 footer{
     background-color: white;
     height: 80px;   
+    position: relative;
 }
 
 /*
@@ -70,4 +71,11 @@ button{
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
+}
+
+span{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 25%;
 }
