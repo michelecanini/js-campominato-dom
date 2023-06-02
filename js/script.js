@@ -62,26 +62,32 @@ function newGame() {
 
 // FUNZIONE 3 - creazione della singola cella
 function createCell(cellx, array_explosive_tnt) { 
-    
+
+    // variabile fine del gioco
+    let gameTheEnd = false;
+
     // ciclo for per ciclare le 100 celle
     for (let i = 0; i < cellx; i++) {
+
         const cell = document.createElement('div');
-
         let cellForRow = Math.sqrt(cellx);
-
+        
         cell.classList.add('cell');
         cell.style.width =`calc(100% / ${cellForRow})`;
         cell.style.height = cell.style.width;
-
         cell.innerHTML = i + 1;
 
         cell.addEventListener('click', function(){
-    
-            if(!array_explosive_tnt.includes(parseInt(this.innerText))){
-                this.classList.add('clicked_cell');
-            }
-            else{
-                this.classList.add('tnt_exploded');
+
+            if (gameTheEnd === false) {
+
+                if(!array_explosive_tnt.includes(parseInt(this.innerText))){
+                    this.classList.add('clicked_cell');
+                }
+                else{
+                    this.classList.add('tnt_exploded');
+                    gameTheEnd = true;
+                }
             }
         })
         grid.append(cell);
@@ -90,8 +96,6 @@ function createCell(cellx, array_explosive_tnt) {
 
 // FUNZIONE 4 - bottone play di avvio del gioco
 btn.addEventListener('click', function(){
-
     const btn = document.getElementById('btn'); // recupero bottone play che genera la griglia
-
     newGame();
 })
