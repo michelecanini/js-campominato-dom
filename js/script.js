@@ -57,12 +57,11 @@ function newGame() {
 
     grid.innerHTML = ''; // reset delle celle
 
-    createCell(cellNumber); // fuzione che crea le celle del gioco
+    createCell(cellNumber, array_explosive_tnt); // fuzione che crea le celle del gioco
 }
 
 // FUNZIONE 3 - creazione della singola cella
-function createCell(cellx) {
-
+function createCell(cellx, array_explosive_tnt) { 
     
     // ciclo for per ciclare le 100 celle
     for (let i = 0; i < cellx; i++) {
@@ -77,37 +76,17 @@ function createCell(cellx) {
         cell.innerHTML = i + 1;
 
         cell.addEventListener('click', function(){
-            this.classList.add('clicked_cell');
-            console.log(this.innerHTML);
+    
+            if(!array_explosive_tnt.includes(parseInt(this.innerText))){
+                this.classList.add('clicked_cell');
+            }
+            else{
+                this.classList.add('tnt_exploded');
+            }
         })
-
         grid.append(cell);
     }
 }
-
-//    let control = false;
-//    let random_number;
-
-//    while (control === false) {
-
-        // creazione del numero random
-//        random_number = generateRandomNumber(1, max);
-        
-//        if (!array_explosive_tnt.includes(random_number)) {
-//            control = true;
-//        }
-//}
-//    return random_number;
-//}
-
-
-// ciclo for di chiamata della funzione per riempire l'array degli esplosivi tnt
-//for (let i=0; i<16; i++) {
-//    let number = fillExplosiveTnt(array_explosive_tnt);
-//array_explosive_tnt.push(number);
-
-//console.log(array_explosive_tnt);
-//}
 
 // FUNZIONE 4 - bottone play di avvio del gioco
 btn.addEventListener('click', function(){
