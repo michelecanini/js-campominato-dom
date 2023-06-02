@@ -6,8 +6,6 @@
 // DICHIARAZIONE DELLE VARIABILI
 
 const array_explosive_tnt = []; // costante dell'array esplosivi tnt vuoto
-const btn = document.getElementById('btn'); // recupero bottone play che genera la griglia
-
 
 
 // LOGICA DEL PROGRAMMA - CREAZIONE DELLE FUNZIONI
@@ -17,43 +15,71 @@ function newGame() {
     const grid = document.getElementById('grid'); // costante per il recupero del contenitore html
 
     // livello di difficoltà  
-    const difficulty_level = document.getElementById('difficulty_level').value; 
+    const difficulty_level = parseInt(document.getElementById('difficulty_level').value); 
     console.log(difficulty_level)
 
     grid.innerHTML = ''; // reset delle celle
 
-    createCell(); // fuzione che crea le celle del gioco
+    createCell(difficulty_level); // fuzione che crea le celle del gioco
+
 }
 
 // FUNZIONE 1 - creazione della singola cella
-function createCell() {
+function createCell(level) {
+   
+    // livelli di difficoltà
+    let createCell;
+    switch (level) {
+        case 0:
+        createCell = 100;
+        break;
+        case 1:
+        createCell = 81;
+        break;
+        case 2:
+        createCell = 49;
+        break;
+    }
+    console.log(createCell);
+
+    // ciclo for per ciclare le 100 celle
+    for (let i = 1; i < 100; i++) {
     let cell = document.createElement('div');
     cell.classList.add('cell');
-    return cell;
-}
+    cell.innerHTML = i + 1;
+
+    cell.addEventListener('click', function(){
+     
+    this.classList.add('clicked_cell');
+         console.log(this.innerHTML);
+ })
+
+     grid.append(cell);
+
+}};
 
 // FUNZIONE 2 - riempimento dell'arrey con esplosivo tnt
-function fillExplosiveTnt(array_explosive_tnt, max) {
+//function fillExplosiveTnt(array_explosive_tnt, max) {
     
-    let control = false;
-    let random_number;
+//    let control = false;
+//    let random_number;
 
-    while (control === false) {
+//    while (control === false) {
 
         // creazione del numero random
-        random_number = generateRandomNumber(1, max);
+//        random_number = generateRandomNumber(1, max);
         
-        if (!array_explosive_tnt.includes(random_number)) {
-            control = true;
-        }
-}
-    return random_number;
-}
+//        if (!array_explosive_tnt.includes(random_number)) {
+//            control = true;
+//        }
+//}
+//    return random_number;
+//}
 
 // FUNZIONE 3 - generazione del numero casuale
-function generateRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+//function generateRandomNumber(min, max) {
+//    return Math.floor(Math.random() * (max - min + 1)) + min;
+//}
 
 // ciclo for di chiamata della funzione per riempire l'array degli esplosivi tnt
 //for (let i=0; i<16; i++) {
@@ -63,28 +89,10 @@ function generateRandomNumber(min, max) {
 //console.log(array_explosive_tnt);
 //}
 
-
-    
-
 // FUNZIONE 4 - bottone play di avvio del gioco
 btn.addEventListener('click', function(){
 
+    const btn = document.getElementById('btn'); // recupero bottone play che genera la griglia
+
     newGame();
-
-    // constante del numero massimo di celle
-    const cellMax = 100;
-
-    // ciclo for per ciclare le 100 celle
-    for (let i = 1; i <= cellMax; i++) {
-    let cell = createCell();
-    cell.innerHTML = i;
-
-    cell.addEventListener('click', function(){
-        
-        this.classList.add('clicked_cell');
-            console.log(this.innerHTML);
-        });
-
-        grid.append(cell);
-    }
-});                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+})
