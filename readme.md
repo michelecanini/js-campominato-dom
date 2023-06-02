@@ -18,6 +18,10 @@
     5. inserire un controllo per escludere due numeri uguali nell'array
 
 #### Sotto-problema-3: In seguito l'utente clicca su una cella: se il numero è presente nella lista dei numeri generati - abbiamo calpestato una bomba - la cella si colora di rosso e la partita termina. Altrimenti la cella cliccata si colora di azzurro e l'utente può continuare a cliccare sulle altre celle.
+    1. effettuare un controllo se abbiamo calpestato un esplosivo
+    2. ? SE la cella cliccata è una bomba
+        2.1 colorare la cella di rosso e bloccare il click alle altre celle
+    3. : ALTRIMENTI prosegui con una casella azzurra
 
 #### Sotto-problema-4: La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
 
