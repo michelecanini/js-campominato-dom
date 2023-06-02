@@ -4,45 +4,49 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
         <!--css-->
         <link rel="stylesheet" href="./css/style.css">
         <title>Griglia Campo Minato</title>
     </head>
     <body>
+        <div class="container">
+            <!--start header-->
+            <header>
+                <div class="logo">
+                    <img src="./img/Logo.png" alt="logo">
+                    <h1>Mine Sweeper 55</h1>
+                </div>
+                <div>
+                    <h4>difficulty level</h4>
+                    <select name="difficulty_level" id="difficulty_level">
+                        <option value="0">easy</option>
+                        <option value="1">normal</option>
+                        <option value="2">hard</option>
+                    </select>
+                </div>
+                <div class="button_play">
+                    <button id="btn">Play!</button>
+                </div>
+            </header>
+            <!--end header-->
 
-        <!--start header-->
-        <header>
-            <div class="logo">
-                <img src="./img/Logo.png" alt="logo">
-                <h1>Mine Sweeper 55</h1>
-            </div>
-            <div>
-                <h4>difficulty level</h4>
-                <select name="difficulty_level" id="difficulty_level">
-                    <option value="0">easy</option>
-                    <option value="1">normal</option>
-                    <option value="2">hard</option>
-                </select>
-            </div>
-            <div class="button_play">
-                <button id="btn">Play!</button>
-            </div>
-        </header>
-        <!--end header-->
+            <div id="score_info"></div>
+            <!--start main-->
+            <main>
+                <div id="grid"></div>
+            </main>
+            <!--end main-->
 
-        <div id="score_info"></div>
-        <!--start main-->
-        <main>
-            <div id="grid"></div>
-        </main>
-        <!--end main-->
-
-        <!--start footer-->
-        <footer>
-           <span><h3>Made with by Classe **</h3></span>
-        </footer>
-        <!--end footer-->
-
+            <!--start footer-->
+            <footer>
+            <span><h3>Made with by Classe **</h3></span>
+            </footer>
+            <!--end footer-->
+        </div>
         <!--js-->
         <script type="text/javascript" src="./js/script.js"></script>
 

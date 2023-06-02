@@ -8,7 +8,12 @@ GENERAL SETTING
 }
 
 body{
-    background-color: rgb(16, 16, 76)
+    background-color: #3bfcbb;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container{
+    position: relative;
 }
 
 /*
@@ -19,14 +24,15 @@ header{
     height: 80px;   
     display: flex;
     flex-direction: row;
+    
 }
 
 main {
-    margin: 3rem;
-    padding: 2rem;
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 /*
@@ -34,8 +40,11 @@ FOOTER SETTING
 */
 footer{
     background-color: white;
-    height: 80px;   
-    position: relative;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 /*
@@ -44,16 +53,17 @@ GRID END CELL SETTING
 
 #grid{
     display: flex;
-    width:  900px;
-    height: 900px;
+    width:  500px;
+    height: 500px;
     flex-wrap: wrap;
+    margin: 10px;
 }
 
 .cell{
-    background-color: aquamarine;
-    border: 2px solid white;
+    background-color: rgb(205, 254, 237);
+    border: 1px solid rgb(16, 16, 76);
     text-align: center;
-    font-size: 25px;
+    font-size: 17px;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -96,5 +106,4 @@ h4{
     color: red;
     font-size: 25px;
     text-align: center;
-    margin-top: 80px;
 }
