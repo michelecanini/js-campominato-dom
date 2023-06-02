@@ -6,10 +6,24 @@
 // DICHIARAZIONE DELLE VARIABILI
 
 const array_explosive_tnt = []; // costante dell'array esplosivi tnt vuoto
-const grid = document.getElementById('grid'); // costante per il recupero del contenitore html
 const btn = document.getElementById('btn'); // recupero bottone play che genera la griglia
 
+
+
 // LOGICA DEL PROGRAMMA - CREAZIONE DELLE FUNZIONI
+
+// FUNZIONE 0 - creazione di una nuava partita
+function newGame() {
+    const grid = document.getElementById('grid'); // costante per il recupero del contenitore html
+
+    // livello di difficoltà  
+    const difficulty_level = document.getElementById('difficulty_level').value; 
+    console.log(difficulty_level)
+
+    grid.innerHTML = ''; // reset delle celle
+
+    createCell(); // fuzione che crea le celle del gioco
+}
 
 // FUNZIONE 1 - creazione della singola cella
 function createCell() {
@@ -49,15 +63,16 @@ function generateRandomNumber(min, max) {
 //console.log(array_explosive_tnt);
 //}
 
+
+    
+
 // FUNZIONE 4 - bottone play di avvio del gioco
 btn.addEventListener('click', function(){
 
-    // reset delle celle
-    grid.innerHTML = '';
-    
+    newGame();
+
     // constante del numero massimo di celle
     const cellMax = 100;
-    console.log(generateRandomNumber(1, cellMax));
 
     // ciclo for per ciclare le 100 celle
     for (let i = 1; i <= cellMax; i++) {
