@@ -5,8 +5,7 @@
 
 // DICHIARAZIONE DELLE VARIABILI
 
-const array_explosive_tnt = []; // costante dell'array esplosivi tnt vuoto
-
+//const array_explosive_tnt = []; // costante dell'array esplosivi tnt vuoto
 
 // LOGICA DEL PROGRAMMA - CREAZIONE DELLE FUNZIONI
 
@@ -16,36 +15,39 @@ function newGame() {
 
     // livello di difficoltà  
     const difficulty_level = parseInt(document.getElementById('difficulty_level').value); 
-    console.log(difficulty_level)
 
     grid.innerHTML = ''; // reset delle celle
 
     createCell(difficulty_level); // fuzione che crea le celle del gioco
-
 }
 
 // FUNZIONE 1 - creazione della singola cella
 function createCell(level) {
-   
+   console.log(level)
     // livelli di difficoltà
-    let createCell;
+    let cellNumber;
     switch (level) {
         case 0:
-        createCell = 100;
+        cellNumber = 100;
         break;
         case 1:
-        createCell = 81;
+        cellNumber = 81;
         break;
         case 2:
-        createCell = 49;
+        cellNumber = 49;
         break;
     }
-    console.log(createCell);
+    console.log(cellNumber);
 
     // ciclo for per ciclare le 100 celle
-    for (let i = 1; i < 100; i++) {
-    let cell = document.createElement('div');
+    for (let i = 0; i < cellNumber; i++) {
+    const cell = document.createElement('div');
+
+    let cellForRow = Math.sqrt(cellNumber);
+
     cell.classList.add('cell');
+    cell.style.width =`calc(100% / ${cellForRow})`;
+    cell.style.height = cell.style.width;
     cell.innerHTML = i + 1;
 
     cell.addEventListener('click', function(){

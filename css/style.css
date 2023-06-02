@@ -50,8 +50,6 @@ GRID END CELL SETTING
 }
 
 .cell{
-    width: calc(900px / 10);
-    height: calc(900px / 10);
     background-color: aquamarine;
     border: 2px solid white;
     text-align: center;
