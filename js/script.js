@@ -66,12 +66,15 @@ function createCell(cellx, array_explosive_tnt) {
     // variabile fine del gioco
     let gameTheEnd = false;
 
+    // variabile del punteggio ottenuto
+    let score = 0;
+
     // ciclo for per ciclare le 100 celle
     for (let i = 0; i < cellx; i++) {
 
         const cell = document.createElement('div');
         let cellForRow = Math.sqrt(cellx);
-        
+
         cell.classList.add('cell');
         cell.style.width =`calc(100% / ${cellForRow})`;
         cell.style.height = cell.style.width;
@@ -83,10 +86,13 @@ function createCell(cellx, array_explosive_tnt) {
 
                 if(!array_explosive_tnt.includes(parseInt(this.innerText))){
                     this.classList.add('clicked_cell');
+                    score++;
+                    console.log(score);
                 }
                 else{
                     this.classList.add('tnt_exploded');
                     gameTheEnd = true;
+                    alert(`Il tuo Score: ${score} punti! Clicca su Play, prova ancora.`);
                 }
             }
         })
@@ -97,5 +103,6 @@ function createCell(cellx, array_explosive_tnt) {
 // FUNZIONE 4 - bottone play di avvio del gioco
 btn.addEventListener('click', function(){
     const btn = document.getElementById('btn'); // recupero bottone play che genera la griglia
+    alert("Ciao Giocatore Benvenuto! Puoi scegliere la difficoltà che preferisci tra easy, normal e hard. Vediamo su quante caselle riuscirai a passare... ma fai ATTENZIONE troverai sul tuo cammino 16 esplosivi TNT cerca di evitarli! Ricorda che puoi cliccare su Play per riavviare la partita")
     newGame();
 })
