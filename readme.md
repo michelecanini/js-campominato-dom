@@ -36,6 +36,6 @@
 #### BUG RISCONTRATI DA SISTEMARE
     1. il numero casuale viene ripetuto piu' volte, facciamo in modo che prima
         della ripetizione vengano utilizzati tutti i valori
-    2. è possibile cliccare piu' volte sulla casella blu piu'
-        volte creando un punteggio errato, inibisci il click sulle cella gia cliccate
-    3. inserire sia un mess di vittoria che uno di sconfitta
+    2. è possibile cliccare piu' volte sulla casella blu creando un punteggio
+     errato, inibisci il click sulle cella gia cliccate
+    3. inserire sia un messaggio di vittoria che uno di sconfitta
