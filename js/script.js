@@ -92,7 +92,18 @@ function createCell(cellx, array_explosive_tnt) {
                 else{
                     this.classList.add('tnt_exploded');
                     gameTheEnd = true;
+
+                    // visualizzare tutte le bombe a fine gioco
+                    let cell_all = document.querySelectorAll('.cell')
+                    for (let i = 0; i < cell_all.length; i++){
+                        if (array_explosive_tnt.includes(i+1)){
+                            cell_all[i].classList.add('tnt_exploded'); 
+                        }
+                    }
+
                     alert(`Il tuo Score: ${score} punti! Clicca su Play, prova ancora.`);
+                    //console.log(tnt_exploded)
+
                 }
             }
         })
