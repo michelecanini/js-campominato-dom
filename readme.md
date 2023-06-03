@@ -26,3 +26,16 @@
 #### Sotto-problema-4: La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe). Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
     1. crea una variabile per il conteggio delle celle cliccate con successo
     2. mostriamo a video un messaggio del punteggio cosi ottenuto dall'utente
+
+#### BONUS 1
+    1. quando si clicca su una bomba bloccare il click ad altre celle
+
+#### BONUS 2
+    1. quando la partita finisce visualizza tutte le bombe
+
+#### BUG RISCONTRATI DA SISTEMARE
+    1. il numero casuale viene ripetuto piu' volte, facciamo in modo che prima
+        della ripetizione vengano utilizzati tutti i valori
+    2. è possibile cliccare piu' volte sulla casella blu piu'
+        volte creando un punteggio errato, inibisci il click sulle cella gia cliccate
+    3. inserire sia un mess di vittoria che uno di sconfitta
