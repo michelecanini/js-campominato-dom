@@ -34,8 +34,8 @@
     1. quando la partita finisce visualizza tutte le bombe
 
 #### BUG RISCONTRATI DA SISTEMARE
-    1. il numero casuale viene ripetuto piu' volte, facciamo in modo che prima
-        della ripetizione vengano utilizzati tutti i valori
-    2. è possibile cliccare piu' volte sulla casella blu creando un punteggio
+    1. il numero casuale viene ripetuto piu' volte, prima della ripetizione
+     utilizzare tutti i valori (evitare doppioni di esplosivi sulla stessa casella)
+    2. è possibile cliccare piu' volte sulla casella azzurra creando un punteggio
      errato, inibisci il click sulle cella gia cliccate
     3. inserire sia un messaggio di vittoria che uno di sconfitta

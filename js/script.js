@@ -73,6 +73,8 @@ function createCell(cellx, array_explosive_tnt) {
 
     // variabile del punteggio ottenuto
     let score = 0;
+    // arrai delle celle cliccate
+    let clicked_cell = []
 
     // ciclo for per ciclare le 100 celle
     for (let i = 0; i < cellx; i++) {
@@ -90,9 +92,14 @@ function createCell(cellx, array_explosive_tnt) {
             if (gameTheEnd === false) {
 
                 if(!array_explosive_tnt.includes(parseInt(this.innerText))){
+
                     this.classList.add('clicked_cell');
+
+                    if (!clicked_cell.includes(this.innerText)){
+                     clicked_cell.push(this.innerText)
                     score++;
-                    console.log(score);
+                    }
+                    
                 }
                 else{
                     this.classList.add('tnt_exploded');
