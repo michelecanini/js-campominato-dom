@@ -7,7 +7,7 @@
 
 // FUNZIONE 0 - generazione del numero casuale
 function generateRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min; 
 }
 
 // FUNZIONE 1 - riempimento dell'arrey con esplosivo tnt
@@ -20,7 +20,7 @@ function fillExplosiveTnt(array_explosive_tnt, max) {
     while (control === false) {
         random = generateRandomNumber(1, max);
         
-        if (!array_explosive_tnt.includes[random]) {
+        if (!array_explosive_tnt.includes(random)) {
             control = true;
         }
     }
@@ -51,8 +51,13 @@ function newGame() {
 
     for (let i = 0; i < 16; i++) {
         let number = fillExplosiveTnt(array_explosive_tnt, cellNumber); // fuzione che riepie l'array con l'esplosivo tnt
-        array_explosive_tnt.push(number);
+        
+
+        if(!array_explosive_tnt.includes(number)){
+            array_explosive_tnt.push(number)
+        }
     }
+    
     console.log(array_explosive_tnt)
 
     grid.innerHTML = ''; // reset delle celle
